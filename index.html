@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Dragging with Geometry: From Pixels to Geometry-Guided Image Editing</title>
+  <link rel="icon" type="image/x-icon" href="">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Dragging with Geometry: From Pixels to Geometry-Guided Image Editing</h1>
+            <div class="is-size-5 publication-authors">
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+
+        <div class="box has-background-white-ter mb-5 p-5">
+          <p class="has-text-justified">
+            <strong>TL;DR:</strong> We introduce a novel drag-based image editing method, GeoDrag, which integrates 3D geometric cues into pixel-level drag-based editing to enhance underlying 3D structure-consistent. 
+            Benefiting from a unified displacement field and a conflict-free partitioning strategy, GeoDrag enables coherent, high-fidelity, and structure-consistent edits in a single forward pass. 
+          </p>
+        </div>
+
+        <div class="box has-background-white-ter p-5">
+          <p class="has-text-justified">
+            <strong>Abstract:</strong> Interactive point-based image editing serves as a controllable editor, enabling precise and flexible manipulation of image content. However, previous methods predominantly center on 2D pixel plane, neglecting the underlying 3D geometric structure. As a result, they often produce imprecise and inconsistent edits, particularly in geometry-intensive scenarios such as rotations and perspective transformations. To address these limitations, we propose a novel geometry-guided drag-based image editing method—GeoDrag, which addresses three key challenges: 1) incorporating 3D geometric cues into pixel-level editing, 2) mitigating discontinuities caused by geometry-only guidance, and 3) resolving conflicts arising from multi-point dragging. Built upon a unified displacement field that jointly encodes 3D geometry and 2D spatial priors, GeoDrag enables coherent, high-fidelity, and structure-consistent editing in a single forward pass. In addition, a conflict-free partitioning strategy is introduced to isolate editing regions, effectively preventing interference and ensuring consistency. Extensive experiments across various editing scenarios validate the effectiveness of our method, showing superior precision, structural consistency, and reliable multi-point editability. Our code and models will be released publicly.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<!-- Method -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <h2 class="title is-3 has-text-centered">Method</h2>
+    <div class="container">
+      <!-- Your image here -->
+      <img src="static/images/pipeline_new.png" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-left">
+       Overall framework of GeoDrag. 
+       In drag pipeline, the mask is decomposed into multiple sub-regions, each containing a pair of drag points. 
+       In each sub-region, the geometry- and plane-aware displacement fields are independently calculated. 
+       Subsequently, these fused fields are aggregated without conflict. 
+       Once the final field is obtained, one-step editing is performed via latent relocation and bilateral nearest neighbor interpolation (BNNI), with reference guidance to ensure semantic consistency. 
+      </h2>
+</div>
+</div>
+</section>
+<!-- Method -->
+
+<!-- Visual Examples -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <h2 class="title is-3 has-text-centered">Visual Examples</h2>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/project_demo2.png" alt="MY ALT TEXT"/>
+      </div>
+       <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/project_demo1.png" alt="MY ALT TEXT"/>
+      </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- Visual Examples -->
+
+<!-- Quantitative Results -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <h2 class="title is-3 has-text-centered">Quantitative Results</h2>
+    <div class="container">
+      <!-- Your image here -->
+<style>
+  table.benchmark {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Times New Roman', serif;
+    font-size: 15px;
+    text-align: center;
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+  }
+  table.benchmark thead {
+    border-bottom: 1.5px solid #333;
+    font-weight: bold;
+    background-color: white;
+  }
+  table.benchmark th,
+  table.benchmark td {
+    padding: 8px 10px;
+    border: none;
+  }
+  table.benchmark td:first-child {
+    text-align: center;
+    font-weight: bold;
+  }
+  table.benchmark td strong {
+    font-weight: bold;
+  }
+  .ref-link {
+    color: #1a73e8;
+    text-decoration: none;
+  }
+  .highlight {
+    background-color: #f2f6ff;
+  }
+</style>
+      <h2 class="subtitle has-text-left">
+      Quantitative results on <span style="font-variant: small-caps;">DragBench</span>. 
+      Lower <strong>MD</strong> and <strong>DAI</strong> indicate higher editing precision, and higher <strong>IF</strong> reflects better perceptual fidelity. 
+      <strong>Time</strong> is the average editing time per point, and <strong>Mem</strong> is the peak GPU memory (GB).
+    </h2>
+<table class="benchmark">
+  <thead>
+    <tr>
+      <th>Approach</th>
+      <th>MD ↓</th>
+      <th>DAI<sub>1</sub> ↓</th>
+      <th>DAI<sub>10</sub> ↓</th>
+      <th>DAI<sub>20</sub> ↓</th>
+      <th>IF ↑</th>
+      <th>Preparation</th>
+      <th>Time (s)</th>
+      <th>Mem</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><strong>DragDiffusion</strong></td>
+    <td>34.57</td><td>0.181</td><td>0.170</td><td>0.160</td><td>0.871</td><td>~1 min (LoRA)</td><td>22.46</td><td>18.63</td>
+  </tr>
+  <tr>
+    <td><strong>FreeDrag</strong></td>
+    <td>30.80</td><td>0.183</td><td>0.166</td><td>0.151</td><td>0.845</td><td>~1 min (LoRA)</td><td>42.90</td><td>18.90</td>
+  </tr>
+  <tr>
+    <td><strong>CLIPDrag</strong></td>
+    <td>34.62</td><td>0.195</td><td>0.174</td><td>0.158</td><td><strong>0.891</strong></td><td>~1 min (LoRA)</td><td>38.21</td><td>22.72</td>
+  </tr>
+  <tr>
+    <td><strong>DragNoise</strong></td>
+    <td>33.84</td><td>0.179</td><td>0.169</td><td>0.158</td><td>0.861</td><td>~1 min (LoRA)</td><td>21.12</td><td>18.36</td>
+  </tr>
+  <tr>
+    <td><strong>FastDrag</strong></td>
+    <td>32.10</td><td>0.131</td><td>0.123</td><td>0.115</td><td>0.850</td><td>✗</td><td><strong>3.23</strong></td><td>5.85</td>
+  </tr>
+  <tr class="highlight">
+    <td><strong>GeoDrag (Ours)</strong></td>
+    <td><strong>29.24</strong></td>
+    <td><strong>0.128</strong></td>
+    <td><strong>0.120</strong></td>
+    <td><strong>0.111</strong></td>
+    <td>0.847</td>
+    <td>✗</td>
+    <td>3.95</td>
+    <td><strong>5.44</strong></td>
+  </tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Quantitative Results -->
+
+
+
+
+
+<!--BibTex citation -->
+<!--  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>BibTex Code Here</code></pre>
+    </div>
+</section>-->
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
